@@ -1,5 +1,5 @@
 public class Filme {
-    String nome;              #modelo
+    String titulo;              //modelo
     int anoDeLancamento;
     boolean incluidoNoPlano;
     double avaliacao;
