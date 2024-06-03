@@ -1,12 +1,14 @@
 import modelo.Filme; // a classe Principal precisa da classe filme
 import modelo.titulo.Titulo.*;
+import modelo.Serie;
 
 public class Principal {
     public static void main(String[] args){
         Filme nomeFilme1 = new Filme(); //new para criar  instancia do objeto
         nomeFilme1.setNome("O poderoso chefão");
         nomeFilme1.setAnoDeLancamento(1970);
-        nomeFilme1.setAnoDeLancamento(180);
+        nomeFilme1.setDuracaoEmMinutos(180);
+        System.out.println("Duração do Filme : " + nomeFilme1.getDuracaoEmMinutos());
 
         nomeFilme1.exibeFichaTecnica();
         nomeFilme1.avalia(8);
@@ -16,6 +18,14 @@ public class Principal {
         System.out.println("Total de avaliações : " + nomeFilme1.getTotalDeAvaliacoes());
         System.out.println(nomeFilme1.pegaMedia());
 
+        Serie lost = new Serie();
+        lost.setNome("Lost");
+        lost.setAnoDeLancamento(2000);
+        lost.exibeFichaTecnica();
+        lost.setTemporadas(10);
+        lost.setEpisodioPorTemporada(10);
+        lost.setMinutosPorEpisodio(50);
+        System.out.println("Duração para maratonar Lost : " + lost.getDuracaoEmMinutos());
 
     }
 }
