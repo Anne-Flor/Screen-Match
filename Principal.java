@@ -1,4 +1,5 @@
 import modelo.Filme; // a classe Principal precisa da classe filme
+import modelo.titulo.Titulo.*;
 
 public class Principal {
     public static void main(String[] args){
