@@ -1,6 +1,7 @@
 import modelo.Filme; // a classe Principal precisa da classe filme
 import modelo.titulo.Titulo.*;
 import modelo.Serie;
+import modelo.calculo.CalculadoraDeTempo;
 
 public class Principal {
     public static void main(String[] args){
@@ -27,5 +28,15 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost : " + lost.getDuracaoEmMinutos());
 
+        Filme nomeFilme2 = new Filme();
+        nomeFilme2.setNome("Avatar");
+        nomeFilme2.setAnoDeLancamento(2023);
+        nomeFilme2.setDuracaoEmMinutos(200);
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(nomeFilme1);
+        calculadora.inclui(nomeFilme2);
+        calculadora.inclui(lost);
+        System.out.println(calculadora.getTempoTotal());
     }
 }
