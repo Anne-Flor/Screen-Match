@@ -1,6 +1,7 @@
 package modelo; //essa classe pertence a esse pacote
 
 import modelo.titulo.Titulo;
+import modelo.calculo.Classificavel;;
 
 public class Filme extends Titulo implements Classificavel {
     private String diretor;
@@ -15,7 +16,7 @@ public class Filme extends Titulo implements Classificavel {
 
     @Override
     public int getClassificacao(){
-        return 0;
+        return (int) pegaMedia() / 2;
     }
 
 }

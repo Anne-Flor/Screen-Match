@@ -1,7 +1,8 @@
+import modelo.Episodio;
 import modelo.Filme; // a classe Principal precisa da classe filme
-import modelo.titulo.Titulo.*;
 import modelo.Serie;
 import modelo.calculo.CalculadoraDeTempo;
+import modelo.calculo.FiltroDeRecomendacao;
 
 public class Principal {
     public static void main(String[] args){
@@ -38,5 +39,14 @@ public class Principal {
         calculadora.inclui(nomeFilme2);
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtra(nomeFilme1);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost); 
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 }
