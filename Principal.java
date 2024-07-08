@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import modelo.Episodio;
 import modelo.Filme; // a classe Principal precisa da classe filme
 import modelo.Serie;
@@ -48,5 +50,20 @@ public class Principal {
         episodio.setSerie(lost); 
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+        var nomeFilme3 = new Filme();
+        nomeFilme3.setDuracaoEmMinutos(200);
+        nomeFilme3.setNome("Dogville");
+        nomeFilme3.setAnoDeLancamento(2003);
+        nomeFilme3.avalia(10);
+        
+        ArrayList<Filme> listadeFilmes = new ArrayList<>();
+        listadeFilmes.add(nomeFilme3);
+        listadeFilmes.add(nomeFilme2);
+        listadeFilmes.add(nomeFilme1); 
+        System.out.println("Tamanho da lista: " + listadeFilmes.size());
+        System.out.println("Primeiro Filme: " + listadeFilmes.get(0).getNome());
+        System.out.println(listadeFilmes);
+        System.out.println("toString do filme " + listadeFilmes.get(0).toString());
     }
 }
