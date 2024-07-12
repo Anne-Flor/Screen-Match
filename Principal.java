@@ -8,8 +8,7 @@ import modelo.calculo.FiltroDeRecomendacao;
 
 public class Principal {
     public static void main(String[] args){
-        Filme nomeFilme1 = new Filme(); //new para criar  instancia do objeto
-        nomeFilme1.setNome("O poderoso chefão");
+        Filme nomeFilme1 = new Filme("O poderoso chefão"); //new para criar  instancia do objeto
         nomeFilme1.setAnoDeLancamento(1970);
         nomeFilme1.setDuracaoEmMinutos(180);
         System.out.println("Duração do Filme : " + nomeFilme1.getDuracaoEmMinutos());
@@ -31,8 +30,7 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost : " + lost.getDuracaoEmMinutos());
 
-        Filme nomeFilme2 = new Filme();
-        nomeFilme2.setNome("Avatar");
+        Filme nomeFilme2 = new Filme("Avatar");
         nomeFilme2.setAnoDeLancamento(2023);
         nomeFilme2.setDuracaoEmMinutos(200);
 
@@ -51,9 +49,8 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var nomeFilme3 = new Filme();
+        var nomeFilme3 = new Filme("Dogville");
         nomeFilme3.setDuracaoEmMinutos(200);
-        nomeFilme3.setNome("Dogville");
         nomeFilme3.setAnoDeLancamento(2003);
         nomeFilme3.avalia(10);
         
