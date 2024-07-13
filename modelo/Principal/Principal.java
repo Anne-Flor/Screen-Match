@@ -1,3 +1,4 @@
+package modelo.Principal;
 import java.util.ArrayList;
 
 import modelo.Episodio;
@@ -8,8 +9,7 @@ import modelo.calculo.FiltroDeRecomendacao;
 
 public class Principal {
     public static void main(String[] args){
-        Filme nomeFilme1 = new Filme("O poderoso chefão"); //new para criar  instancia do objeto
-        nomeFilme1.setAnoDeLancamento(1970);
+        Filme nomeFilme1 = new Filme("O poderoso chefão", 1970); //new para criar  instancia do objeto
         nomeFilme1.setDuracaoEmMinutos(180);
         System.out.println("Duração do Filme : " + nomeFilme1.getDuracaoEmMinutos());
 
@@ -21,17 +21,14 @@ public class Principal {
         System.out.println("Total de avaliações : " + nomeFilme1.getTotalDeAvaliacoes());
         System.out.println(nomeFilme1.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodioPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost : " + lost.getDuracaoEmMinutos());
 
-        Filme nomeFilme2 = new Filme("Avatar");
-        nomeFilme2.setAnoDeLancamento(2023);
+        Filme nomeFilme2 = new Filme("Avatar", 2023);
         nomeFilme2.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -49,18 +46,17 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var nomeFilme3 = new Filme("Dogville");
+        var nomeFilme3 = new Filme("Dogville", 2003);
         nomeFilme3.setDuracaoEmMinutos(200);
-        nomeFilme3.setAnoDeLancamento(2003);
         nomeFilme3.avalia(10);
         
-        ArrayList<Filme> listadeFilmes = new ArrayList<>();
-        listadeFilmes.add(nomeFilme3);
-        listadeFilmes.add(nomeFilme2);
-        listadeFilmes.add(nomeFilme1); 
-        System.out.println("Tamanho da lista: " + listadeFilmes.size());
-        System.out.println("Primeiro Filme: " + listadeFilmes.get(0).getNome());
-        System.out.println(listadeFilmes);
-        System.out.println("toString do filme " + listadeFilmes.get(0).toString());
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(nomeFilme3);
+        listaDeFilmes.add(nomeFilme2);
+        listaDeFilmes.add(nomeFilme1); 
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
+        System.out.println("toString do filme " + listaDeFilmes.get(0).toString());
     }
 }

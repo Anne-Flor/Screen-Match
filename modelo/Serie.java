@@ -4,6 +4,11 @@ import modelo.titulo.Titulo;
 import modelo.calculo.Classificavel;
 
 public class Serie extends Titulo implements Classificavel {
+    
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
     private int temporadas; 
     private boolean ativa;
     private int episodioPorTemporada;
