@@ -1,6 +1,9 @@
 package modelo.titulo;
 
-public class Titulo {
+import java.lang.Comparable; 
+import modelo.titulo.Titulo;
+
+public class Titulo implements Comparable<Titulo>{
     private String nome;              //modelo
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -8,7 +11,7 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public Titulo(String nome, int anoDeLancamento){
+    public Titulo(String nome, int anoDeLancamento){ //constructor
         this.setNome(nome);
         this.setAnoDeLancamento(anoDeLancamento);
     }
@@ -59,5 +62,10 @@ public class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outrTitulo) {
+        return this.getNome().compareTo(outrTitulo.getNome());
     }
 }

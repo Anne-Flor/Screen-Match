@@ -1,7 +1,7 @@
 package modelo.calculo;
 
-import modelo.Filme;
-import modelo.Serie;
+//import modelo.Filme;
+//import modelo.Serie;
 import modelo.titulo.Titulo;
 
 public class CalculadoraDeTempo {

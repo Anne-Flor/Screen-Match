@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import modelo.Filme;
 import modelo.Serie;
 import modelo.titulo.Titulo;
+import java.util.Collections;
 
 public class Main {
     public static void main(String [] args){
@@ -30,8 +31,23 @@ public class Main {
         for (Titulo item : listaDeAssistidos) {
             System.out.println(item.getNome());
             if (item instanceof Filme filme && filme.getClassificacao() > 2 ) {
-        
+                System.out.println("Classificação: " + filme.getClassificacao());
         }
         }
+
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Justen Bieber");
+        buscaPorArtista.add("Sabrina Carpener");
+        buscaPorArtista.add("Camilla Cabello");
+
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação");
+        System.out.println(buscaPorArtista);
+        System.out.println("Lista de Títulos ordenados");
+        Collections.sort(listaDeAssistidos);
+        System.out.println(listaDeAssistidos);
     }
 }
