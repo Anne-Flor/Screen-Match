@@ -15,7 +15,7 @@ import modelo.TituloOmdb;
 import modelo.titulo.Titulo;
 
 public class PrincipalComListas {
-    public static void main(String[] args) throws IOException, InterruptedException{
+public static void main(String[] args) throws IOException, InterruptedException{
         Scanner leitura = new Scanner(System.in);      
         System.out.println("Digite um filme para busca");
         var busca = leitura.nextLine(); 
@@ -34,13 +34,21 @@ public class PrincipalComListas {
         System.out.println(json);
 
         Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create(); 
         TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(meuTituloOmdb);
 
-        Titulo meuTitulo = new Titulo(meuTituloOmdb);
-        System.out.println("Titulo já convertido");
+        try {
+                Titulo meuTitulo = new Titulo(meuTituloOmdb); 
+                System.out.println("Titulo já convertido");
+                System.out.println(meuTitulo);
+        } catch (NumberFormatException e) {
+                System.out.println("Aconteceu um erro: ");
+                System.out.println(e.getMessage());
+        }
 
-    }
+        System.out.println("O programa finalizou corretamente");
+
+}
 
 }
