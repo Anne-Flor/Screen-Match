@@ -22,6 +22,7 @@ public static void main(String[] args) throws IOException, InterruptedException{
 
         String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=5b84a8f6";
 
+        try{ 
         HttpClient   client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
@@ -38,13 +39,15 @@ public static void main(String[] args) throws IOException, InterruptedException{
         TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(meuTituloOmdb);
 
-        try {
+     //   try {
                 Titulo meuTitulo = new Titulo(meuTituloOmdb); 
                 System.out.println("Titulo já convertido");
                 System.out.println(meuTitulo);
         } catch (NumberFormatException e) {
                 System.out.println("Aconteceu um erro: ");
                 System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e){
+                System.out.println("Erro de argumento na busca, verifique o endereço");
         }
 
         System.out.println("O programa finalizou corretamente");
